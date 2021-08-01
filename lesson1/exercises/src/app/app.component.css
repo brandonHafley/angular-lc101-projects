@@ -1,0 +1,10 @@
+fav-links {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#chores {
+    border-left: 1px dashed black;
+    border-right: 1px dashed black;
+}
