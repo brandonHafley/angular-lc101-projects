@@ -7,10 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonsComponent implements OnInit {
    buttonHeading: string = "Buttons"
-   inactive: boolean = false;
+   active: boolean = true;
+   disabledButton: boolean[] = [false, false, false];
+   location: string = "center";
 
    constructor() { }
 
    ngOnInit() { }
+
+   reactivateButtons() {
+      for (let i = 0; i < this.disabledButton.length; i++) {
+         this.disabledButton[i] = false;
+      }
+
+      return this.disabledButton;
+   }
+
+   shiftLocation(oldLocation: string) {
+      while (this.location === oldLocation) {
+         this.location = ["left", "right", "center"][Math.floor(Math.random() * 3)];
+      }
+
+      return this.location;
+   }
 
 }
